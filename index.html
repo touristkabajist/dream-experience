@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Dream sensory experience survey" />
+  <title>Dream Experience Survey</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Dream experience survey</p>
+      <h1>What have you experienced in your dreams?</h1>
+      <p class="intro">Select every sensation you remember experiencing. Your response is limited to one submission per IP address.</p>
+    </section>
+
+    <section id="surveyCard" class="card" aria-labelledby="question-heading">
+      <h2 id="question-heading">Choose all that apply</h2>
+      <form id="surveyForm" novalidate>
+        <fieldset class="option-group">
+          <legend>View</legend>
+          <label class="choice nested"><input type="checkbox" name="option" value="view_without_colour"><span>Without colour</span></label>
+          <label class="choice nested"><input type="checkbox" name="option" value="view_with_colour"><span>With colour</span></label>
+        </fieldset>
+
+        <fieldset class="option-group">
+          <legend>Sound</legend>
+          <label class="choice"><input type="checkbox" name="option" value="sound"><span>Sound</span></label>
+        </fieldset>
+
+        <fieldset class="option-group">
+          <legend>Smell</legend>
+          <label class="choice"><input type="checkbox" name="option" value="smell"><span>Smell</span></label>
+        </fieldset>
+
+        <fieldset class="option-group">
+          <legend>Taste</legend>
+          <label class="choice"><input type="checkbox" name="option" value="taste"><span>Taste</span></label>
+        </fieldset>
+
+        <fieldset class="option-group">
+          <legend>Touch</legend>
+          <label class="choice nested"><input type="checkbox" name="option" value="touch_wetness"><span>Wetness</span></label>
+          <label class="choice nested"><input type="checkbox" name="option" value="touch_temperature"><span>Temperature</span></label>
+          <label class="choice nested"><input type="checkbox" name="option" value="touch_roughness"><span>Roughness</span></label>
+          <p class="hint">Additional touch sub-options can be added later without changing the storage model.</p>
+        </fieldset>
+
+        <fieldset class="option-group">
+          <legend>Other</legend>
+          <label class="choice"><input id="otherCheckbox" type="checkbox" name="option" value="other"><span>Other</span></label>
+          <div id="otherWrap" class="other-wrap hidden">
+            <label for="otherText">Describe the experience</label>
+            <textarea id="otherText" rows="4" placeholder="Enter up to 100 words..."></textarea>
+            <div class="word-meta"><span id="wordError" class="field-error" role="alert"></span><span id="wordCount">0 / 100 words</span></div>
+          </div>
+        </fieldset>
+
+        <div id="formMessage" class="message" role="status" aria-live="polite"></div>
+        <button id="submitButton" class="primary-button" type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section id="resultsSection" class="card hidden" aria-labelledby="results-heading">
+      <div class="results-heading-row">
+        <div>
+          <p class="eyebrow">Community results</p>
+          <h2 id="results-heading">Dream sensations reported</h2>
+        </div>
+        <div id="totalResponses" class="total-pill">0 responses</div>
+      </div>
+
+      <div id="countsGrid" class="counts-grid"></div>
+
+      <div class="other-results">
+        <div class="section-heading">
+          <h3>Other responses</h3>
+          <p>Exact responses are shown below as individual bubbles.</p>
+        </div>
+        <div id="otherBubbles" class="bubble-cloud"></div>
+        <p id="noOtherResponses" class="empty-state hidden">No “Other” responses yet.</p>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>

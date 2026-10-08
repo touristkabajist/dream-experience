@@ -1,0 +1,10 @@
+{
+  "name": "dream-experience-survey",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Single-page dream sensory experience survey with IP-hashed one-response enforcement.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
